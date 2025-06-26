@@ -81,9 +81,6 @@ class Game {
     this.update();
   }
   moveDown() {
-    // alert('testando baixo')
-    this.status = 'playing';
-
     for (let i = 0; i < 4; i++) {
       let coluna = [];
 
