@@ -103,7 +103,7 @@ class Game {
   }
 
   handleKeyEvent(e) {
-    if (!this.isStarted) {
+    if (this.status !== 'playing') {
       return;
     }
 
@@ -253,13 +253,17 @@ class Game {
   }
 
   updateStatus() {
+    const oldStatus = this.status;
+
     this.checkWin();
     this.checkLose();
 
-    if (this.status === 'win') {
-      alert('Voce ganhou');
-    } else if (this.status === 'lose') {
-      alert('Voce perdeu');
+    if (oldStatus !== this.status) {
+      if (this.status === 'win') {
+        alert('Você ganhou');
+      } else if (this.status === 'lose') {
+        alert('Você perdeu');
+      }
     }
   }
 
